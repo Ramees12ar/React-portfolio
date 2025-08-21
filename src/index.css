@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens */
+@layer base {
+	:root {
+		--background: 220 27% 98%;
+		--foreground: 224 71% 4%;
+
+		--muted: 221 89% 96%;
+		--muted-foreground: 225 17% 35%;
+
+		--border: 222 32% 90%;
+		--input: 222 32% 90%;
+		--ring: 260 90% 58%; /* neon purple ring */
+
+		--primary: 260 90% 58%; /* neon purple */
+		--primary-foreground: 0 0% 100%;
+	}
+
+	.dark {
+		--background: 224 71% 4%;
+		--foreground: 210 40% 98%;
+
+		--muted: 223 30% 12%;
+		--muted-foreground: 217 14% 65%;
+
+		--border: 223 30% 12%;
+		--input: 223 30% 12%;
+		--ring: 260 90% 58%;
+
+		--primary: 260 90% 58%;
+		--primary-foreground: 0 0% 100%;
+	}
+
+	* {
+		@apply border-border;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: system-ui, sans-serif;
+		@apply bg-background text-foreground transition-colors duration-300;
+		/* Layered subtle gradient background */
+		background-image:
+			radial-gradient(1000px 600px at 120% -10%, hsl(var(--primary) / 0.15), transparent 60%),
+			radial-gradient(800px 500px at -15% 20%, hsl(var(--muted) / 0.8), transparent 55%);
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4;
+}
+
+@layer utilities {
+	/* Subtle float animation */
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-6px); }
+	}
+
+	/* Fade-up entrance */
+	@keyframes fadeUp {
+		0% { opacity: 0; transform: translateY(12px) scale(0.98); }
+		100% { opacity: 1; transform: translateY(0) scale(1); }
+	}
+
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.animate-fade-up {
+		animation: fadeUp 700ms ease both;
+	}
+
+	/* 3D tilt on hover */
+	.tilt-hover {
+		transform-style: preserve-3d;
+		transition: transform 400ms ease, box-shadow 400ms ease;
+	}
+	.tilt-hover:hover {
+		transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateZ(4px);
+		box-shadow: 0 10px 30px hsl(var(--foreground) / 0.15);
+	}
+
+	/* Glowing text gradient */
+	.glow-text {
+		background: linear-gradient(90deg, #22d3ee, #60a5fa, #a78bfa, #f472b6);
+		background-size: 200% 200%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		filter: drop-shadow(0 2px 12px rgba(147, 197, 253, 0.25));
+		animation: gradientShift 8s ease infinite;
+	}
+
+	@keyframes gradientShift {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+
+	/* Soft gradient orbs */
+	.orb {
+		position: absolute;
+		border-radius: 9999px;
+		filter: blur(40px);
+		opacity: 0.5;
+	}
+	.orb-primary {
+		background: radial-gradient(circle at 30% 30%, #a78bfa 0%, rgba(167,139,250,0.45) 40%, transparent 70%);
+	}
+	.orb-accent {
+		background: radial-gradient(circle at 70% 70%, #22d3ee 0%, rgba(34,211,238,0.45) 40%, transparent 70%);
+	}
+
+	/* Soft shadows */
+	.shadow-soft { box-shadow: 0 10px 30px hsl(var(--foreground) / 0.08); }
+	.shadow-soft-lg { box-shadow: 0 20px 60px hsl(var(--foreground) / 0.10); }
+
+	/* Glassmorphism backgrounds */
+	.bg-glass { background-color: hsl(var(--background) / 0.6); backdrop-filter: blur(10px); }
+	.bg-glass-strong { background-color: hsl(var(--background) / 0.4); backdrop-filter: blur(14px); }
+
+	/* Fancy underline */
+	.underline-fx { position: relative; }
+	.underline-fx::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -8px;
+		height: 3px;
+		width: 72px;
+		border-radius: 9999px;
+		background: linear-gradient(90deg, #6ee7f9, #93c5fd, #a78bfa, #f0abfc);
+		box-shadow: 0 4px 16px rgba(167,139,250,0.35);
+	}
+
+	/* Hover ring */
+	.hover-ring { transition: box-shadow 300ms ease; }
+	.hover-ring:hover { box-shadow: 0 0 0 8px hsl(var(--primary) / 0.08); }
+
+	/* Bulge effect for icons */
+	.bulge {
+		transition: transform 220ms ease, box-shadow 220ms ease;
+		will-change: transform;
+	}
+	.bulge:hover {
+		transform: scale(1.08);
+		box-shadow: 0 12px 28px hsl(var(--foreground) / 0.12);
+	}
+
+	/* Strong 3D bulge for entire tiles */
+	.bulge-3d {
+		transform-style: preserve-3d;
+		transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
+		will-change: transform;
+	}
+	.bulge-3d:hover {
+		transform: perspective(900px) translateZ(12px) scale(1.04) rotateX(2deg) rotateY(-2deg);
+		box-shadow: 0 18px 50px hsl(var(--foreground) / 0.18);
+	}
+}
