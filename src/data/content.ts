@@ -158,7 +158,7 @@ export const PERSONAL_PROJECTS = [
     description: "Modern React portfolio built with Vite, Tailwind CSS, and shadcn/ui. Features glassmorphism design, 3D hover effects, and responsive layout showcasing skills and projects.",
     imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=60",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
-    repoUrl: "https://github.com/Ramees12ar/react-portfolio",
+    repoUrl: "https://github.com/Ramees12ar/React-portfolio",
     liveUrl: "",
   },
 ];
