@@ -240,15 +240,16 @@ export const EDUCATION = [
     year: "2013 – 2014",
   },
 ];
+const { VITE_RESUME, VITE_MY_LINKEDIN, VITE_MY_LINKEDIN_USER,
+  VITE_MY_GITHUB, VITE_MY_GITHUB_USER, VITE_MY_EMAIL, VITE_MY_EMAIL_USER } = import.meta.env
 
 // 📄 Resume Link (Google Drive or any PDF link)
-export const RESUME_LINK =
-  "https://drive.google.com/file/d/1SeN6dfkGfnoXKIr9wq8WQLhU5fx5Aosv/view";
+export const RESUME_LINK = VITE_RESUME;
 
 export const SOCIAL_LINKS = [
-  { title: "@ramees-ar", url: "https://www.linkedin.com/in/ramees-ar/", iconUrl: linkedinIcon },
-  { title: "@Ramees12ar", url: "https://github.com/Ramees12ar", iconUrl: githubIcon },
-  { title: "ramees.ar04", url: "mailto:ramees.ar04@gmail.com", iconUrl: gmailIcon },
+  { title: VITE_MY_LINKEDIN_USER, url: VITE_MY_LINKEDIN, iconUrl: linkedinIcon },
+  { title: VITE_MY_GITHUB_USER, url: VITE_MY_GITHUB, iconUrl: githubIcon },
+  { title: VITE_MY_EMAIL_USER, url: VITE_MY_EMAIL, iconUrl: gmailIcon },
 ];
 
 export const AWARDS = [

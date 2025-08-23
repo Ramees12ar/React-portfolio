@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef } from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../lib/utils";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -6,8 +7,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, asChild, ...props }, ref) => {
-    const Comp: any = asChild ? "a" : "button";
+  ({ className, children, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
         ref={ref}
