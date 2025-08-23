@@ -24,20 +24,20 @@ export default function ToolCard({ name, iconUrl }: ToolCardProps) {
     const gradient = bgForTool(name);
     return (
         <Card className="bulge-3d hover:shadow-soft-lg transition-transform will-change-transform">
-            <CardContent className="relative p-5 flex flex-col items-center gap-3">
+            <CardContent className="relative p-3 sm:p-5 flex flex-col items-center gap-2 sm:gap-3">
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${gradient}`} />
                 {/* logo visibility shim */}
-                <div className="relative z-10 grid place-items-center w-14 h-14 rounded-xl bg-white/80 dark:bg-white/10 backdrop-blur border bulge">
+                <div className="relative z-10 grid place-items-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/80 dark:bg-white/10 backdrop-blur border bulge">
                     {iconUrl && (
                         <img
                             src={iconUrl}
                             alt={name}
-                            className="w-10 h-10 object-contain"
+                            className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                             loading="lazy"
                         />
                     )}
                 </div>
-                <span className="relative z-10 font-medium text-center text-sm">{name}</span>
+                <span className="relative z-10 font-medium text-center text-xs sm:text-sm leading-tight">{name}</span>
             </CardContent>
         </Card>
     );

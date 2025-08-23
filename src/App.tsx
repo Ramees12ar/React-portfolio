@@ -40,11 +40,11 @@ function App() {
         </Section>
 
         <Section id="tools" title="Tools & Tech">
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {TOOL_SECTIONS.map((group, gi) => (
               <div key={gi}>
-                <h3 className="text-xl font-semibold mb-3">{group.title}</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">{group.title}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
                   {group.items.map((tool: any, i: number) => (
                     <ToolCard key={`${gi}-${i}`} name={tool.name} iconUrl={tool.iconUrl} />
                   ))}
@@ -55,7 +55,7 @@ function App() {
         </Section>
 
         <Section id="personal-projects" title="Personal Projects">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {PERSONAL_PROJECTS.map((p, i) => (
               <ProjectCard key={i} {...p} />
             ))}
@@ -63,7 +63,7 @@ function App() {
         </Section>
 
         <Section id="other-projects" title="Other Projects">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {OTHER_PROJECTS.map((p, i) => (
               <ProjectCard key={i} {...p} />
             ))}
