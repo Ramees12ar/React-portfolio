@@ -172,4 +172,46 @@ section {
 		transform: perspective(900px) translateZ(12px) scale(1.04) rotateX(2deg) rotateY(-2deg);
 		box-shadow: 0 18px 50px hsl(var(--foreground) / 0.18);
 	}
+
+	/* Line clamp utilities for text truncation */
+	.line-clamp-1 {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+	}
+	.line-clamp-2 {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+	.line-clamp-3 {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
+
+	/* Mobile navigation improvements */
+	@media (max-width: 768px) {
+		.mobile-menu-enter {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+		.mobile-menu-enter-active {
+			transform: translateY(0);
+			opacity: 1;
+			transition: transform 300ms ease-out, opacity 300ms ease-out;
+		}
+		.mobile-menu-exit {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		.mobile-menu-exit-active {
+			transform: translateY(-100%);
+			opacity: 0;
+			transition: transform 300ms ease-in, opacity 300ms ease-in;
+		}
+	}
 }

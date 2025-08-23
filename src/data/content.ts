@@ -70,20 +70,20 @@ export const TOOL_SECTIONS = [
   {
     title: "Languages",
     items: [
+      { name: "JavaScript (ES6+)", iconUrl: javascriptIcon },
+      { name: "TypeScript", iconUrl: typescriptIcon },
       { name: "Java", iconUrl: javaIcon },
       { name: "Python", iconUrl: pythonIcon },
-      { name: "TypeScript", iconUrl: typescriptIcon },
-      { name: "JavaScript (ES6+)", iconUrl: javascriptIcon }
     ]
   },
   {
     title: "Frameworks & Libraries",
     items: [
-      { name: "React", iconUrl: reactIcon },
-      { name: "Redux", iconUrl: reduxIcon },
       { name: "Node.js", iconUrl: nodejsIcon },
       { name: "Express.js", iconUrl: expressIcon },
-      { name: "Feathers.js", iconUrl: feathersIcon }
+      { name: "Feathers.js", iconUrl: feathersIcon },
+      { name: "React", iconUrl: reactIcon },
+      { name: "Redux", iconUrl: reduxIcon },
     ]
   },
   {
@@ -159,6 +159,30 @@ export const PERSONAL_PROJECTS = [
     imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=60",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
     repoUrl: "https://github.com/Ramees12ar/React-portfolio",
+    liveUrl: "",
+  },
+  {
+    title: "Book Library Management System",
+    description: "A comprehensive Node.js application that provides an elegant solution for storing and retrieving books from MongoDB. Features a robust RESTful API with efficient data management, user authentication, and a clean interface for managing extensive book collections.",
+    imageUrl: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1200&q=60",
+    tags: ["Node.js", "Express", "Mongoose", "MongoDB"],
+    repoUrl: "https://github.com/Ramees12ar/book-library-Nodejs",
+    liveUrl: "",
+  },
+  {
+    title: "E-commerce Product Aggregator",
+    description: "An innovative Node.js application that seamlessly integrates with both Shopify and WooCommerce platforms using GraphQL. This powerful tool aggregates product listings from multiple e-commerce sources, providing a unified interface for comprehensive product discovery and management.",
+    imageUrl: "https://wallpapers.com/images/hd/e-commerce-pictures-fydfma1rdft7jec4.jpg",
+    tags: ["Node.js", "Express", "GraphQL"],
+    repoUrl: "https://github.com/Ramees12ar/nodejs-workouts",
+    liveUrl: "",
+  },
+  {
+    title: "Discord Invite Tracker Bot",
+    description: "A sophisticated Discord bot that meticulously tracks user invitation activities within Discord communities. Built with a local database system, it provides comprehensive analytics on user growth, invitation patterns, and community engagement metrics, empowering server administrators with valuable insights.",
+    imageUrl: "https://miro.medium.com/1*2z-HnUMhWWGHoEjzxJ8SBg.jpeg",
+    tags: ["JavaScript", "Discord"],
+    repoUrl: "https://github.com/Ramees12ar/discord-inviteTracker-",
     liveUrl: "",
   },
 ];

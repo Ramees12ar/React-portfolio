@@ -15,12 +15,12 @@ export default function ExperienceCard({
 }: ExperienceCardProps) {
   return (
     <Card className="tilt-hover hover:shadow-soft-lg transition-transform">
-      <CardContent className="p-6">
-        <h3 className="text-xl font-semibold">{role}</h3>
-        <p className="text-sm text-muted-foreground">
+      <CardContent className="p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl font-semibold leading-tight">{role}</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-1">
           {company} • {duration}
         </p>
-        <ul className="list-disc list-inside mt-3 text-sm space-y-1">
+        <ul className="list-disc list-inside mt-3 text-xs sm:text-sm space-y-1 leading-relaxed">
           {responsibilities.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
